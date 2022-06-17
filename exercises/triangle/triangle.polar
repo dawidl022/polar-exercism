@@ -8,6 +8,7 @@ equilateral(side1, side2, side3) if
 two_equal(side1, side2) if
     side1 = side2;
 
+# will match 3 times if triangle is equilateral
 isosceles(side1, side2, side3) if
     two_equal(side1, side2) or
     two_equal(side1, side3) or
@@ -16,7 +17,7 @@ isosceles(side1, side2, side3) if
 scalene(side1, side2, side3) if
     side1 != side2 and side1 != side3;
 
-triangle(side1: Integer, side2: Integer, side3: Integer, t_type: String) if
+triangle(side1, side2, side3, t_type: String) if
     valid_triangle(side1, side2, side3) and
     (
         (equilateral(side1, side2, side3) and t_type = "equilateral") or
